@@ -1,0 +1,23 @@
+<div id="pageprint">
+  <a href="https://pingpongtester.onrender.com/ping">
+    <img src="#" width="600" height="600" />
+  </a>
+</div>
+
+<button type="button" onclick="downloadCode();">Download HTML</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+  function generatePDF() {
+    const element = document.getElementById('pageprint');
+    html2pdf().from(element).set({ enableLinks: true }).save('download.pdf');
+  }
+
+  function downloadCode() {
+    generatePDF();
+    setTimeout(function () {
+      window.location = window.location;
+    }, 3000);
+  }
+</script>
